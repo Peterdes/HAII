@@ -1,0 +1,90 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: 15 September 2014\hfill}
+
+\begin{document}
+	\begin{definition}
+		$X$ is an $H^0$-complex if $H^i(X) \neq 0 \implies i = 0$.
+	\end{definition}
+	
+	\begin{theorem}
+		The precomposition of the localization functor $\Q : \Kom(\C) \to \Der{\C}$
+		with embedding $i_0: \C \to \Kom(\C)$ defines an equivalence between $\C$
+		and the full subcategory of $\Der{\C}$ consisting of $H^0$-complexes.
+	\end{theorem}
+	
+	\begin{definition}
+		$X[i] = T^i([X])$ for $X \in \C$.
+	\end{definition}
+
+	
+	\begin{definition}
+		$\C$ -- abelian, then $\Ext_\C^i(X,Y) = \Hom_{\Der{\C}}(X[0], Y[i])$.
+	\end{definition}
+	
+	\begin{remark}
+		One does not need projectives or injectives in this definition.
+	\end{remark}
+	
+	\begin{remark}
+		$\Ext_\C^i(X,Y) = \Hom_{\Der{\C}}(X[k], Y[k+i])$ for any $k \in \mb{Z}$.
+	\end{remark}
+	
+	\begin{definition}[multiplication]
+		There is a~multiplication 
+		$$\Ext_\C^i(X,Y) \times \Ext_\C^j(Y,Z) \to \Ext_\C^{i+j}(X,Z)$$
+		via composition
+		$\Hom_{\Der{\C}}(X[0],Y[i]) \times \Hom_{\Der{\C}}(Y[i],Z[i+j])
+		\to \Hom_{\Der{\C}}(X[0],Z[i+j])$.
+	\end{definition}
+	
+	\begin{fact}
+		For an exact sequence $0 \to Y' \to Y \to Y'' \to 0$ there is 
+		an exact sequence
+		$$\ldots\to \Ext^i(X,Y') \to \Ext^i(X,Y) \to \Ext^i(X,Y'') 
+		\to \Ext^{i+1}(X,Y') \to \ldots$$
+	\end{fact}
+	
+	\begin{exercise}
+		Show that if $X \to Y \to Z \to X[1]$ is distinguished in $\Der{\C}$,
+		then we have an exact sequence of abelian groups
+		$$\ldots \to \Hom_{\Der{\C}}(U, X[i])
+		\to \Hom_{\Der{\C}}(U, Y[i])
+		\to \Hom_{\Der{\C}}(U, Z[i])
+		\to \Hom_{\Der{\C}}(U, X[i+1]) \to \ldots$$
+	\end{exercise}
+	
+	\begin{theorem}
+		$\Ext_\C^0(X,Y) = \Hom_\C(X,Y)$
+	\end{theorem}
+	
+	\begin{theorem}
+		$\Ext_\C^i(X,Y) = 0$ for $i<0$.
+	\end{theorem}
+	
+	\begin{theorem}
+		Every element in $\Ext_\C^i(X,Y)$ has a~presentation 
+		$X[0] \xleftarrow{s} K \xrightarrow{f} Y[i]$,
+		where $K_j = 0$ for $j < -i$ and for $j > 0$,
+		$K_{-i} = Y$, $f_i = \mr{id}$, and $s$ is a~\qi.
+		
+		In other words, every such element comes from
+		an exact sequence
+		$$0 \to Y= K^{-i} \to K^{-i+1} \to K^{-i+2} \to \ldots
+		\to K^1 \to K^0 \to X \to 0.$$
+	\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 
