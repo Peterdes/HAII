@@ -8,9 +8,9 @@
 	\end{definition}
 	
 	\begin{theorem}
-		The precomposition of the localization functor $\Q : \Kom(\C) \to \Der{\C}$
+		The precomposition of the localization functor $\Q : \Kom(\C) \to \Der(\C)$
 		with embedding $i_0: \C \to \Kom(\C)$ defines an equivalence between $\C$
-		and the full subcategory of $\Der{\C}$ consisting of $H^0$-complexes.
+		and the full subcategory of $\Der(\C)$ consisting of $H^0$-complexes.
 	\end{theorem}
 	
 	\begin{definition}
@@ -19,7 +19,7 @@
 
 	
 	\begin{definition}
-		$\C$ -- abelian, then $\Ext_\C^i(X,Y) = \Hom_{\Der{\C}}(X[0], Y[i])$.
+		$\C$ -- abelian, then $\Ext_\C^i(X,Y) = \Hom_{\Der(\C)}(X[0], Y[i])$.
 	\end{definition}
 	
 	\begin{remark}
@@ -27,15 +27,15 @@
 	\end{remark}
 	
 	\begin{remark}
-		$\Ext_\C^i(X,Y) = \Hom_{\Der{\C}}(X[k], Y[k+i])$ for any $k \in \mb{Z}$.
+		$\Ext_\C^i(X,Y) = \Hom_{\Der(\C)}(X[k], Y[k+i])$ for any $k \in \mb{Z}$.
 	\end{remark}
 	
 	\begin{definition}[multiplication]
 		There is a~multiplication 
 		$$\Ext_\C^i(X,Y) \times \Ext_\C^j(Y,Z) \to \Ext_\C^{i+j}(X,Z)$$
 		via composition
-		$\Hom_{\Der{\C}}(X[0],Y[i]) \times \Hom_{\Der{\C}}(Y[i],Z[i+j])
-		\to \Hom_{\Der{\C}}(X[0],Z[i+j])$.
+		$\Hom_{\Der(\C)}(X[0],Y[i]) \times \Hom_{\Der(\C)}(Y[i],Z[i+j])
+		\to \Hom_{\Der(\C)}(X[0],Z[i+j])$.
 	\end{definition}
 	
 	\begin{fact}
@@ -46,12 +46,12 @@
 	\end{fact}
 	
 	\begin{exercise}
-		Show that if $X \to Y \to Z \to X[1]$ is distinguished in $\Der{\C}$,
+		Show that if $X \to Y \to Z \to X[1]$ is distinguished in $\Der(\C)$,
 		then we have an exact sequence of abelian groups
-		$$\ldots \to \Hom_{\Der{\C}}(U, X[i])
-		\to \Hom_{\Der{\C}}(U, Y[i])
-		\to \Hom_{\Der{\C}}(U, Z[i])
-		\to \Hom_{\Der{\C}}(U, X[i+1]) \to \ldots$$
+		$$\ldots \to \Hom_{\Der(\C)}(U, X[i])
+		\to \Hom_{\Der(\C)}(U, Y[i])
+		\to \Hom_{\Der(\C)}(U, Z[i])
+		\to \Hom_{\Der(\C)}(U, X[i+1]) \to \ldots$$
 	\end{exercise}
 	
 	\begin{theorem}

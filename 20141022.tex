@@ -1,0 +1,100 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: 22 September 2014\hfill}
+
+\begin{document}
+	\begin{definition}[``exactness'']
+		A~functor $\Der^+(\C) \to \Der^+(\C)$ is \emph{``exact''} if 
+		it maps distinguished triangles to distinguished triangles.
+	\end{definition}
+	
+	\begin{proposition}
+		Let $F:\C \to \D$ be exact. Then it takes \qi{s} to \qi{s}.
+		
+		Therefore it defines a~functor $\Der F:\Der^+(\C) \to \Der^+(\D)$
+		and the functor is ``exact''.
+	\end{proposition}
+	
+	\begin{definition}[adapted class]
+		We say that a~class $\mc{R}$ of objects in $\C$ is \emph{adapted}
+		to a~functor $F$ if it satisfies:
+		\begin{itemize}
+			\item $\mc{R}$ is closed under finite coproducts,
+			\item $F$ takes acyclic complexes from $\K^+(\mc{R})$ 
+			to acyclic ones,
+			\item every object of $\C$ embeds into an~object of $\mc{R}$.
+		\end{itemize}
+
+	\end{definition}
+	
+	\begin{proposition}
+		Let $\mc{R}$ be an adapted class of objects of $\C$
+		for a~left exact additive functor $F:\C \to \D$.
+		Let $S_\mc{R}$ be the class of \qi{s} in $\K^+(\mc{R})$.
+		Then $S_\mc{R}$ is localizing and the canonical functor
+		$\K^+(\mc{R})[S^{-1}_\mc{R}] \to \Der^+(\C)$
+		is an equivalence of categories.
+	\end{proposition}
+	
+	\begin{definition}
+		Let $F: \C \to \D$ be an additive, left exact functor between 
+		abelian categories.
+		Its derived functor $\Der^+F$ consists of a~functor 
+		$$RF:\Der^+(\C) \to \Der^+(\D)$$ which is exact and a~morphism of functors
+		$$\varepsilon_F: \Q_\D \circ \K^+(F) \to \Der^+(F) \circ \Q_\C$$
+		such that 
+		for any exact $F:\Der^+(\C) \to \Der^+(\D)$ and any natural
+		$\varepsilon: \Q_\D \circ \K^+(F) \to G \circ \Q_\C$ 
+		there exists a~unique morphism $\eta: \Der^+ F \to G$ such that
+		the diagram is commutative:
+		\begin{tikzpicture}
+			\matrix(m)[matrix of math nodes, row sep=1em, column sep=1em]
+			{ \Q_\D \circ \K^+(F) & G \circ \Q_\C \\
+			& \Der^+F \circ \Q_\C \\};
+			\path[->,font=\scriptsize]
+			(m-1-1) edge node[auto]{$\varepsilon$} (m-1-2)
+			edge node[below]{$\varepsilon_F$} (m-2-2)
+			(m-2-2) edge node[right]{$\eta \circ \mr{id}_{\Q_\C}$} (m-1-2);
+		\end{tikzpicture}
+	\end{definition}
+	
+	\begin{theorem}
+		If for $F$ there exists an adapted class $\mc{R}$ of objects in $\C$, 
+		then $\Der^+ F$ exists and is unique up to an isomorphism.
+	\end{theorem}
+	
+	\begin{theorem}
+		$RF$ may be defined via the composition
+		$\Der^+(\C) \to \K^+(\mc{R})[S_{\mc{R}}^{-1}] \xrightarrow{F} \Der^+(\D)$.
+	\end{theorem}
+	
+	\begin{theorem}
+		If $\C$ contains enough injective objects,
+		then the class $\mc{I}$ of them is adapted to 
+		any left exact functor $F:\C \to \D$.
+	\end{theorem}
+	
+	\begin{proposition}
+		When $\mc{R} = \mc{I}$, then $\varepsilon_F$ may be defined
+		in the following way.
+		
+		$T:\K^+(\mc{I}) \to \Der^+(\C)$ is an equivalence of categories,
+		$U:\Der^+(\C) \to \K^+(\mc{I})$ inverse equivalence,
+		we know that for $Y$ injective $\Hom_{\Der^+(\C)}(X,Y) \simeq \Hom_{\K^+(\C)}(X,Y)$,
+		so take $f:X \to I$ a~\qi in $\Hom_{\Der^+(\C)} (\Q X, TU \Q X)$
+		and denote by $f_X$ its image under the bijection
+		in $\Hom_{\K^+(\C)}(X, U\Q X)$,
+		and define $(\varepsilon_F)_X = \Q F(f_X)$.
+	\end{proposition}
+
+
+
+	
+	
+
+
+
+
+\end{document}
+ 
+ 
