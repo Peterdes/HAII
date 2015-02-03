@@ -9,7 +9,7 @@
 	\end{definition}
 	
 	\begin{proposition}
-		Let $F:\C \to \D$ be exact. Then it takes \qi{s} to \qi{s}.
+		Let $F:\C \to \D$ be exact. Then it takes quasi-isomorphisms to quasi-isomorphisms.
 		
 		Therefore it defines a~functor $\Der F:\Der^+(\C) \to \Der^+(\D)$
 		and the functor is ``exact''.
@@ -30,7 +30,7 @@
 	\begin{proposition}
 		Let $\mc{R}$ be an adapted class of objects of $\C$
 		for a~left exact additive functor $F:\C \to \D$.
-		Let $S_\mc{R}$ be the class of \qi{s} in $\K^+(\mc{R})$.
+		Let $S_\mc{R}$ be the class of quasi-isomorphisms in $\K^+(\mc{R})$.
 		Then $S_\mc{R}$ is localizing and the canonical functor
 		$\K^+(\mc{R})[S^{-1}_\mc{R}] \to \Der^+(\C)$
 		is an equivalence of categories.
@@ -43,8 +43,8 @@
 		$$RF:\Der^+(\C) \to \Der^+(\D)$$ which is exact and a~morphism of functors
 		$$\varepsilon_F: \Q_\D \circ \K^+(F) \to \Der^+(F) \circ \Q_\C$$
 		such that 
-		for any exact $F:\Der^+(\C) \to \Der^+(\D)$ and any natural
-		$\varepsilon: \Q_\D \circ \K^+(F) \to G \circ \Q_\C$ 
+		for any exact $G:\Der^+(\C) \to \Der^+(\D)$ and any natural
+		${\varepsilon: \Q_\D \circ \K^+(F) \to G \circ \Q_\C}$ 
 		there exists a~unique morphism $\eta: \Der^+ F \to G$ such that
 		the diagram is commutative:
 		\begin{tikzpicture}
@@ -81,18 +81,11 @@
 		$T:\K^+(\mc{I}) \to \Der^+(\C)$ is an equivalence of categories,
 		$U:\Der^+(\C) \to \K^+(\mc{I})$ inverse equivalence,
 		we know that for $Y$ injective $\Hom_{\Der^+(\C)}(X,Y) \simeq \Hom_{\K^+(\C)}(X,Y)$,
-		so take $f:X \to I$ a~\qi in $\Hom_{\Der^+(\C)} (\Q X, TU \Q X)$
+		so take $f:X \to I$ a~quasi-isomorphism in $\Hom_{\Der^+(\C)} (\Q X, TU \Q X)$
 		and denote by $f_X$ its image under the bijection
 		in $\Hom_{\K^+(\C)}(X, U\Q X)$,
 		and define $(\varepsilon_F)_X = \Q F(f_X)$.
 	\end{proposition}
-
-
-
-	
-	
-
-
 
 
 \end{document}
