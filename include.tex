@@ -21,22 +21,27 @@
 \usepackage{tikz,paralist,mathtools}
 \usetikzlibrary{matrix,arrows,decorations}
 
-\newcommand{\sgn}{{\mathrm{sgn}}\,}
-\newcommand{\Kom}{\mathrm{Kom}}
-\newcommand{\Mor}{\mathrm{Mor}}
-\newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\Ext}{\mathrm{Ext}}
-\newcommand{\Ob}{\mathrm{Ob}}
-\newcommand{\Cone}{\mathrm{C}}
-\newcommand{\Cyl}{\mathrm{Cyl}}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Kom}{Kom}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Cone}{C}
+\DeclareMathOperator{\Cyl}{Cyl}
+\DeclareMathOperator{\Der}{D}
+\DeclareMathOperator{\K}{K}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Top}{\mathrm{Top}}
+\newcommand{\Rmod}{\mathrm{R-mod}}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\D}{\mathcal{D}}
-\newcommand{\Der}{\mathrm{D}}
 \newcommand{\Q}{\mathcal{Q}}
-\newcommand{\K}{\mathrm{K}}
 \newcommand{\qi}{quasi-isomorphism}
 
 \newcommand{\bigslant}[2]{{\left.\raisebox{.2em}{$#1$}\middle/\raisebox{-.2em}{$#2$}\right.}}

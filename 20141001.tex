@@ -5,7 +5,7 @@
 \begin{document}
 
 	We began with some motivation-discussion. 
-	Ain't got time to write that nicely (in a~motivating way).
+	Ain't got time for writing that nicely (in a~motivating way).
 	
 	\begin{theorem}[definition of derived category]
 		Let $\C$ be an abelian category and $\Kom(\C)$ denote the category
@@ -52,7 +52,7 @@
 				\path[->,font=\scriptsize]
 				(m-1-1) edge node[auto] {$L$} (m-1-3)
 				(m-1-1) edge node[left] {$F$} (m-2-2)
-				(m-1-3) edge node[right] {$: F$} (m-2-2);
+				(m-1-3) edge node[right] {$LF$} (m-2-2);
 			\end{tikzpicture}
 	\end{definition}
 	
@@ -63,9 +63,9 @@
 	\begin{definition}
 		The class $S \subset \Mor(\B)$ is localising if it satisfies
 		\begin{itemize}
-			\item $\forall_{X \in \Ob(\B)} \id_X \in S$
+			\item $\forall_{X \in \Ob(\B)}\, \id_X \in S$
 			\item $s, t \in S \implies s \circ t \in S$
-			\item $\forall_{s \in S, f} \exists_{t \in S, g}$
+			\item $\forall_{s \in S, f}\, \exists_{t \in S, g}$
 			
 			\begin{tikzpicture}
 				\matrix(m)[matrix of math nodes, row sep=1em, column sep=1em]
@@ -77,9 +77,9 @@
 				(m-2-1) edge node[auto] {$f$} (m-2-2)
 				(m-1-2) edge node[auto] {$s$} (m-2-2);
 			\end{tikzpicture}
-			\item $\forall_{t \in S, g} \exists_{s \in S, f}$ as above
+			\item $\forall_{t \in S, g}\, \exists_{s \in S, f}$ as above
 			\item $f,g : X \to Y$, then 
-				$\exists_{s \in S} sf=sg \iff \exists_{t \in S} ft = gt$.
+				$\exists_{s \in S}\, sf=sg \iff \exists_{t \in S}\, ft = gt$.
 		\end{itemize}
 
 	\end{definition}
