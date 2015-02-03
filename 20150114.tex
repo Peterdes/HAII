@@ -1,0 +1,63 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: January 14, 2014\hfill}
+
+\begin{document}
+    {\bf Applications of stable derived functors}
+    
+    \begin{theorem}
+        $T:\Rmod \to \Rmod$, then 
+        $$L_i^sT(A) = \lim_n \pi_{i+n}(T(\tilde{R}[S^n] \otimes P_\ast))
+        \lim_n H_{i+n}(T(\tilde{R}[S^n] \otimes P_\ast)),$$
+        where $S^n$ is any simplicial model of $n$-sphere,
+        $\tilde{R}[\gamma] = \bigslant{R[\gamma]}{R[\ast]}$ a~simplicial set,
+        $P_\ast$ is any projective resolution of $A$.
+        
+        The limit is taken via suspension
+        $\pi_{i+n}(T(\tilde{R}[S^n] \otimes P_\ast)) 
+        \to \pi_{i+n+1}(S^1 \wedge T(\tilde{R}[S^n] \otimes P_\ast))
+        \to \pi_{i+n+1}(T(\tilde{R}[S^{n+1}] \otimes P_\ast))$.
+    \end{theorem}
+        
+    In general for $S^1 \wedge F(X) \to F(S^1 \wedge X)$
+    one has to have for any $z \in S^1$,
+    $F(X) \to F(S^1 \wedge X), X \to S^1 \wedge X$, $x \to z \wedge x$.
+    
+    One takes $R = \mb Z / p$ or $R = \mb Z$.
+    
+    $L_i^sT(\mb Z/p) = \lim \pi_{i+n} T(\mb Z/p [S^n])$,
+    but $\widetilde{\mb Z/p}[S^n] = K(\mb Z/p,n)$,
+    $\tilde{\mb Z}[S^n] = K(\mb Z, n)$.
+    
+    Stalk skewed gra..itions on $H^\ast(\bullet, \mb Z/p)$
+    is $H_\ast^s(K(\mb Z/p),\mb Z/p) 
+    = H_\ast^s(K(\mb Z/p,n),\mb Z/p)
+    = L_\ast^s \mb Z_p[.](\mb Z/p)$. (?)
+    
+    \begin{theorem}
+        Let $SP^i$ be the $i$-th symmetric power functor,
+        and $SP^i_p$ the $p$-reduced $i$-th symmetric power,
+        and $SP^\ast_p = \bigslant{\bigoplus SP^i}{\langle x^p - 1 \rangle}$.
+        
+        Then $L_\ast^s SP^\ast(\mb Z/p) = H_\ast^s(K(\mb Z),\mb Z/p)$,
+        $L_\ast^s SP_p^\ast(\mb Z/p) = H_\ast^s(K(\mb Z/p),\mb Z/p)$.
+    \end{theorem}
+    
+    Calculations: Let $\Gamma$ be a~category of functors 
+    $T:$ finite pointed sets $\to \mb Z/p\mr{-vect}$,
+    $T(\ast)=0$. 
+    $L \in \Gamma$ is defined as $L(X) = \widetilde{\mb Z/p}[X]$.
+    
+    \begin{lemma}
+        Let $T:\mb Z/p\mr{-vect} \to \mb Z/p\mr{-vect}$.
+        Then $L_i^sT(\mb Z/p) = \Tor_i^\Gamma(L^\ast,T\circ L)$,
+        where $L^\ast(X) = L(X)^\ast$, and
+    \end{lemma}
+    
+    OK, I am blown up. Break.
+
+
+
+\end{document}
+ 
+ 

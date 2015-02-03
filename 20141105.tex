@@ -1,0 +1,67 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: November 5, 2014\hfill}
+
+\begin{document}
+	
+	\begin{theorem}
+		Let $\C$ be an abelian category. Then $\K(\C)$
+		(also $\K^+, \K^-, \K^b$) with standard translation functor
+		and distinguished triangles is triangulated.
+	\end{theorem}
+	
+	\begin{remark}
+		$\Cone(U)$ fits as $Z$ in TR1.
+	\end{remark}
+	
+	\begin{definition}[cohomological functor]
+		Assume $\C$ is triangulated, $\A$ is abelian.
+		Let $F :\C \to \A$ be an additive functor. We call it 
+		{\em cohomological}
+		if for any distinguished triangle
+		$X \xrightarrow u Y \xrightarrow v Z \xrightarrow w T(X)$
+		we have an exact sequence
+		$\ldots \to F(T^i(X)) \to F(T^i(Y)) \to F(T^i(Z)) 
+		\to F(T^{i+1})(X)) \to \ldots$.
+	\end{definition}
+	
+	\begin{definition}
+		Let $\C$ be a~triangulated category,
+		$S$ a~localizing class of morphisms in $\C$.
+		We say that $S$ is {\em compatible} with triangulation if
+		\begin{itemize}
+			\item $s \in S \iff T(s) \in S$,
+			\item in TR3, $f, g \in S \implies h \in S$ for any $h$.
+		\end{itemize}
+	\end{definition}
+	
+	\begin{theorem}
+		Let $\C$ and $S$ be as above. On $\C[S^{-1}]$
+		we can define
+		\begin{itemize}
+			\item $T_S: \C[S^{-1}] \to \C[S^{-1}]$, $T_S = T$
+			on objects and morphisms,
+			i.e. $T(X \xleftarrow{s} Z \xrightarrow{f} Y)
+			=T(X) \xleftarrow{T(s)} T(Z) \xrightarrow{T(f)} T(Y)$.
+			\item 
+			$X \xrightarrow u Y \xrightarrow v Z \xrightarrow w T(X)$
+			is distinguished in $\C[S^{-1}]$ if it is isomorphic to
+			a~distinguished triangle coming from $\C$.
+		\end{itemize}
+		Then $\C[S^{-1}]$ with the structure defined above is triangulated.
+	\end{theorem}
+	
+	\begin{corollary}
+		Derived category of an abelian category inherits
+		the triangulated structure from the homotopy
+		category of complexes.
+	\end{corollary}
+
+
+
+
+
+
+\end{document}
+ 
+ 

@@ -1,0 +1,113 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: December 3, 2014\hfill}
+
+\begin{document}
+    Let $\C$ be abelian,
+    remind $s\C$ -- simplicial objects in $\C$,
+    $C_\ast(\C)$ -- chain complexes over $\C$.
+    
+    \begin{definition}[$s$-morphism]
+        $X_\bullet, Y_\bullet \in s\C$. For a~simplicial set $K \in s\Set$
+        a~map which associates $F(\sigma):X_n \to Y_n$
+        to any $\sigma \in K_n$ is called {\em $s$-morphism}
+        (denote $F:K \times X_\bullet \to Y_\bullet$)
+        if for any $\alpha:[m]\to[n]$ in $\Delta$ we have
+        $F(K(\alpha)(\sigma)) \circ X(\alpha) = Y(\alpha) F(\sigma)$.
+        
+        Observe that when $X_\bullet, Y_\bullet$ are in $s\Set$ then
+        $s$-morphisms are simplicial maps 
+        $K_\bullet \times X_\bullet \to Y_\bullet$.
+    \end{definition}
+    
+    \begin{example}
+        If $K=\Delta[0]$, then $s$-morphism 
+        is just a~simplicial morphism $X_\bullet \to Y_\bullet$.
+    \end{example}
+    
+    \begin{example}
+        If $K=\Delta[1]$ then $s$-morphism is called
+        {\em a homotopy} between $F(0)$ and $F(1)$.
+    \end{example}
+    
+    \begin{remark}
+        $T:\C \to \C'$ functor
+        induces $T:s\C \to s\C'$, 
+        if $X_\bullet \in s\C$, then
+        $T(X)_n = T(X_n), T(X)(\alpha) = T(X(\alpha))$,
+    \end{remark}
+    
+    \begin{definition}
+        If $F$ is an $s$-morphism 
+        $F:K_\bullet \times X_\bullet \to Y_\bullet$,
+        then it defines 
+        $TF:K_\bullet \times T(X_\bullet) \to T(Y_\bullet)$
+        defined by $TF(\sigma) = T(F(\sigma))$.
+    \end{definition}
+    
+    \begin{remark}
+        Any functor $T:\C \to \C'$ sends homotopic maps
+        to homotopic ones.
+    \end{remark}
+
+\pagebreak    
+    \begin{definition}
+        Let $\C$ be abelian, then there are functors 
+        $$ s\C \xrightleftharpoons[K]{N} C_\ast(\C)$$
+        defined as follows.
+        
+        Normalization $N$ is defined, for $X_\bullet \in s\C$, as
+        $$N(X)_n = \bigcap_{i=1}^n \ker(d_i:X_n \to X_{n-1})$$
+        (e.g. $\ker (X_n \xrightarrow{\prod d_i} \prod X_{n-1}$),
+        with $$d:N(X)_n \to N(X)_{n-1}$$
+        induced by $d_0$.
+        
+        $K$ is defined in such a~way. 
+        If $\alpha:[n]\to[q]$, then $d(\alpha) = n$ and $r(\alpha)=q$.
+        Notice for any $\alpha$ there is unique
+        $\alpha=\varepsilon \circ \eta$,
+        where $\varepsilon$ is an injection and $\eta$ is a~surjection.
+        For $C \in C_\ast(\C)$, take
+        $$K(C)_n = \bigoplus_{\eta:d(\eta)=n} C_{r(\eta)},$$
+        Now for $\alpha :[m]\to[n]$
+        define $$KC(\alpha):K(C)_n \to K(C)_m$$
+        on every $C_{r(\eta)}$ in such a~way:
+        $\eta \alpha = \varepsilon' \eta'$,
+        let $KC(\alpha)$ map $C_{r(\eta)}$
+        into $C_{r(\eta')}$
+        via the formula
+        $$K(\eta, \alpha) = 
+        \begin{cases}
+            \id_{C_{r(\eta)}} &\text{for }\varepsilon'=\id_{[r(\eta)]}\\
+            d:C_{r(\eta)}\to C_{r(\eta)-1} = C_{r(\eta')} 
+                &\text{for }\varepsilon'=\varepsilon^0 \\
+            0 &\text{otherwise}
+        \end{cases}.$$
+    \end{definition}
+    
+    \begin{remark}
+        Observe that if $f:C\to D$ in $C_\ast(\C)$,
+        then the induced map $KC \to KD$ is simplicial.
+    \end{remark}
+    
+    \begin{theorem}[Dold-Kan]
+        The functors $N$ and $K$ give 
+        an equivalence of $s\C$ and $C_\ast(\C)$.
+    \end{theorem}
+    
+    \begin{remark}
+        It was somehow convenient to define,
+        for $X \in s\C$, $\bar{X} \in s\C$
+        via $\bar{X}_n = \ker(d_{n+1}:X_{n+1} \to X_n)$.
+    \end{remark}
+    
+    \begin{lemma}
+        Let $f:X_\bullet \to Y_\bullet$ be a~simplicial morphism 
+        which satisfies $(Nf)_i$ is mono(epi) for $i \leq n$.
+        Then $f_n:X_n \to Y_n$ is mono(epi) for $i \leq n$.
+    \end{lemma}
+
+
+\end{document}
+ 
+ 

@@ -1,0 +1,81 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: November 12, 2014\hfill}
+
+\begin{document}
+    
+    \begin{definition}
+        $\K^{\leq n}(\A), \Der^{\leq n}(\A)$ 
+        -- full subcategories of objects $X$ for which $H^i(X) = 0$ for $i>n$.
+        
+        Analogously one defines $\K^{\geq n}(\A), \Der^{\geq n}(\A)$.
+    \end{definition}
+    We know $\A = \Der^{\leq 0}(\A) \cap \Der^{\geq 0}(\A)$.
+    
+    \begin{definition}
+        Let $\C$ be a~triangulated category. Assume that $D$ 
+        is a~subcategory of $\C$. 
+        Then we write $D^{\leq n} = D^{\leq 0}[-n]$,
+        $D^{\geq n} = D^{\geq 0} [-n]$.
+    \end{definition}
+    
+    \begin{definition}[t-structure]
+        A~t-structure on $\C$ consists of a~pari of full subcategories
+        $(\C^{\leq 0}, \C^{\geq 0})$ in $\C$ which satisfy the following properties:
+        \begin{itemize}
+            \item $\C^{\leq 0} \subset \C^{\leq 1}$,
+            $\C^{\geq 0} \supset \C^{\geq 1}$,
+            \item $X \in \C^{\leq 0} \wedge Y \in \C^{\geq 1} 
+            \implies \Hom(X,Y) = 0$,
+            \item for all $X \in \C$ there is a~distinguished triangle
+            $A \to X \to B \to A[1]$
+            such that ${A \in \C^{\leq 0}}, {B \in \C^{\geq 1}}$.
+        \end{itemize}
+    \end{definition}
+    
+    \begin{definition}[core]
+        $\A = \C^{\leq 0} \cap \C^{\geq 0}$ is called 
+        the {\em core} of the t-structure on $\C$.
+    \end{definition}
+    
+    \begin{proposition}
+        In $\Der(\A)$, the subcategories
+        $\Der^{\leq0}(\A)$ and $\Der^{\geq0}(\A)$ define 
+        a~t-structure on $\Der(\A)$.
+    \end{proposition}
+    
+    \begin{theorem}
+        The core of any t-structure on triangulated $\C$ 
+        is an additive category.
+    \end{theorem}
+    
+    \begin{lemma}
+        There exist functors $\tau_{\leq n} : \C \to \C^{\leq n}$
+        ($\tau_{\geq n}:\C \to \C^{\geq n}$)
+        which are right (left) adjoint to the inclusion functors.
+        
+        Moreover, for any $X \in \Ob(\C)$ there exists a~distinguished triangle
+        $$\tau_{\leq0}X \to X \to \tau_{\geq1}X \to (\tau_{\leq 0}X)[1].$$
+        
+        Moreover, any distinguished triangle $A \to X \to B \to A[1]$
+        such that $A \in \C^{\leq 0}, B \in \C^{\geq 1}$
+        is isomorphic to the one above.
+    \end{lemma}
+    
+    \begin{lemma}
+        \begin{itemize}
+            \item $\tau_{\leq n} X = 0 \iff X \to \tau_{\geq n+1} X$
+            is an isomorphism,
+            \item if $m \leq n$, then there are maps
+            $$\tau_{\leq m} X \to \tau_{\leq m} \tau_{\leq n} X,$$
+            $$\tau_{\geq n} X \to \tau_{\geq n} \tau_{\geq m} X,$$
+            which are isomorphisms,
+            if $m \leq n$, then there is a~unique isomorphism
+            $$\tau_{\geq m} \tau_{\leq n} X 
+            \to \tau_{\leq n} \tau_{\geq m} X (= \tau_{[m,n]} X).$$
+        \end{itemize}
+    \end{lemma}
+
+\end{document}
+ 
+ 

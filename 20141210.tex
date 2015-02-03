@@ -1,0 +1,202 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: December 10, 2014\hfill}
+
+\begin{document}
+    \begin{definition}[cosimplicial object]
+        $X:\Delta \to \C$.
+        
+        Denote the category of {\em cosimplicial objects} in $\C$ as $c\C$.
+    \end{definition}
+    
+    \begin{theorem}[Dold-Kan again]
+        $c\C \simeq \text{cochain complexes over }\C$
+    \end{theorem}
+    
+    \begin{remark}
+        $c\C = s(\C^{op})$
+    \end{remark}
+    
+    \begin{definition}
+        For $X \in s\C$ define $kX \in C_\ast(\C)$,
+        $(kX)_n = X_n$, $d=\sum_{i=0}^n (-1)^i d_i$.
+    \end{definition}
+    
+    \begin{theorem}
+        The natural embedding $NX \hookrightarrow kX$
+        is a~chain homotopy equivalence.
+    \end{theorem}
+    
+    \begin{remark}
+        \begin{itemize}
+            \item $NX = \bigslant{kX}{DX}$, where 
+            $(DX)_n = \bigcup_{i=0}^{n-1} 
+            \mr{im}(s_i:X_{n-1} \to X_n)
+            = \mr{im}\left(\prod X_{n-1} \xrightarrow{\prod s_i} \to X_n\right)$.
+            \item $kX = NX \oplus DX$,
+            \item $DX$ is contractible.
+        \end{itemize}
+    \end{remark}
+    
+    \begin{remark}
+        One can get $NX$  using $(-1)^n d_n$ instead of $d_0$.
+    \end{remark}
+    
+    \begin{remark}
+        Observe that if $\tau_n:[n]\to[n], i \mapsto n-i$,
+        and $\alpha^\ast = \tau_n \alpha \tau_m$ for
+        $\alpha:[m]\to[n]$, then we get an involution of the category $\Delta$,
+        $\alpha \to \alpha^\ast$.
+        
+        Hence we get an involution of $s\C$,
+        $X \to X^\ast$, $(X^\ast)_n = X_n$, $X^\ast(\alpha) = X(\alpha^\ast)$,
+        $d_i$ goes to $d_{n-i}$.
+        
+        We can define $N^\ast X = N(X^\ast)$, $K^\ast C = (KC)^\ast$,
+        getting $N^\ast K^\ast = NK$, $K^\ast N^\ast = \mr{Id}$.
+    \end{remark}
+    
+    \begin{theorem}
+        \begin{enumerate}
+            \item $f_1, f_2:X \to Y$ homotopic in $s\C$
+            iff $Nf_1, Nf_2$ are chain homotopic in $C_\ast(\C)$,
+            \item $\varphi_1, \varphi_2:C \to D$ 
+            are chain homotopic in $C_\ast(\C)$
+            iff $K\varphi_1, K\varphi_2$ are homotopic in $s\C$.
+        \end{enumerate}
+    \end{theorem}
+    
+    \begin{definition}[simplicial resolution]
+        Let $T:\C \to \C'$ functor between abelian categories,
+        $\C$ has enough projective objects, 
+        $A \in \Ob(\C)$ and $n \in \mb N$.
+        
+        Then a~pair $(X_\bullet, \xi)$ is called 
+        a~{\em siplicial resolution of $A$ of degree $n$}
+        (simplicial resolution of $(A,n)$)
+        if $X_\bullet \in s\C$, $X_i = 0$ for $i<n$,
+        $H_j(X) := H_j(kX) = 0$ for $j>n$
+        and $\xi:H_n(X) \to A$ is an isomorphism.
+        
+        If $\forall_i X_i$ is projective, then $X$
+        is a~{\em projective resolution of $(A,n)$}.
+        
+        Usually we will remove $\xi$ from notation 
+        and say that $H_n(X) = A$.
+    \end{definition}
+    
+    \begin{remark}
+        \begin{enumerate}
+            \item If $X_\bullet$ is a~simplicial resolution of $(A,n)$,
+            then $NX$ is a~resolution of $A$ shifted up by $n$.
+            If $X_\bullet$ is projective, then $NX$ 
+            is a~projective resolution.
+            \item If $P \in C_\ast(\C)$ is a~projective resolution of 
+            $A$ shifted by $n$, then $KP$ is a~simplicial
+            projective resolution of $(A,n)$.
+            \item If $\alpha:A \to B$ in $\C$ and $X,Y$ are projective
+            resolutions of $(A,n)$ and $(B,n)$, then
+            there exists a~simplicial morphism
+            $f:X \to Y$ which induces $\alpha = H_n(f)$.
+            
+            Moreover, $f$ is unique up to homotopy.
+        \end{enumerate}
+    \end{remark}
+    
+    \begin{definition}[derived functor]
+        Fuctor $L_qT(\bullet, n): \C \to \C'$
+        defined below is called 
+        {\em $q$-th left derived functor of $T$ of degree $n$},
+        where $L_qT(\bullet,n)(A) = H_q(T(X))$,
+        where $X$ is any simplicial resolution of $A$.
+    \end{definition}
+    
+    \begin{remark}
+        If $T$ is additive, then $k(T(X)) = T(kX)$,
+        so $L_qT(A,n) = L_{q-n}T(A)$
+        ($L_{q-n}$ from ordinary homotopy category).
+    \end{remark}
+    
+    \begin{remark}
+        When $T$ is not additive, then 
+        $\sum_{i=0}^n (-1)^i T(d_i)$ is usually not equal
+        $T(\sum (-1)^i d_i)$,
+        so $k(TX)$ and $T(kX)$ may have different homology.
+    \end{remark}
+    
+    Let $T:\C \to \C'$ functor of abelian categories.
+    Assume $T(0) = 0$ (if $T(0)= A$, then take $T' = \ker(T \to T(0) = A)$).
+    
+    \begin{definition}[cross effect]
+        For any ${k \in \mb N}$ we define the 
+        {\em $k$-th cross-effect of $T$}
+        as a~functor $T_k:\C^k \to \C'$
+        such that we get a~functorial decomposition
+        $T(A_1 \oplus \ldots \oplus A_k)
+        = \bigoplus_{i=1}^k T(A_i)
+        \oplus \bigoplus_{i_1<i_2} T_2(A_{i_1}, A_{i_2})
+        \oplus \ldots \oplus T_k(A_1, \ldots, A_k)$.
+        
+        We can define $T_k$ inductively,
+        \begin{itemize}
+            \item $T_1 = T$,
+            \item $T_2(A_1,A_2) = 
+            \ker(T(A_1 \oplus A_2) \to T(A_1) \oplus T(A_2))$,
+            \item $\ldots$,
+            \item $T_k(A_1, \ldots, A_k)
+            = \ker(T(A_1 \oplus \ldots \oplus A_n) \xrightarrow{\prod_i}
+            \prod_i T(A_1 \oplus \ldots \oplus \hat{A}_i \oplus \ldots \oplus A_k))$.
+        \end{itemize}
+    \end{definition}
+    
+    \begin{definition}[functor degree]
+        We say that $T$ is of degree $\leq k$ if $T_{k+1} = 0$.
+        
+        We say that $T$ is of degree $k$ 
+        if $T$ is of degree $\leq k$ and $T_k \neq 0$.
+    \end{definition}
+    
+    \begin{theorem}[properties of cross-effects]
+        \begin{itemize}
+            \item If for some $i$, $A_i = 0$, then $T_k(A_1, \ldots, A_n) = 0$.
+            \item $T_k$ is symmetric in its variables.
+            \item If we define $s^{(1)}(A) = T_2(A,A_2)$,
+            $s^{(2)}(A) = T_2(A_1,A)$,
+            then $s_2^{(1)}(A_1, A_2; A_3) = s_2^{(2)}(A_1; A_2, A_3) 
+            = T_3(A_1,A_2,A_3)$.
+        \end{itemize}
+    \end{theorem}
+    
+    \begin{example}
+        $\deg T \leq 1$ iff $T$ is additive.
+    \end{example}
+    
+    \begin{example}
+        $T(A) = A^{\otimes 2}$,
+        then $T_2(A,B) = (A \otimes B) \oplus (B \otimes A)$
+        and it is linear in $A,B$, so $T$ is of degree $2$.
+    \end{example}
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

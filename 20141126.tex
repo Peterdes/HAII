@@ -1,0 +1,148 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: November 26, 2014\hfill}
+
+\begin{document}
+    {\bf Simpliecial objects in categories}
+    
+    \begin{definition}[simplicial object]
+        A~{\em simplicial object} $X$ in $\C$ consists of:
+        \begin{itemize}
+            \item $\forall_{n \geq 0}\, X_n \in\Ob\C$ 
+            -- {\em $n$-simplices} of $X$,
+            \item $\forall_{n \geq 0} \forall_{0 \leq i \leq n}\,
+            d_i : X_n \to X_{n-1}$ -- {\em boundaries (faces)},
+            \item $\forall_{n \geq 0} \forall_{0 \leq i \leq n}\,
+            s_i : X_n \to X_{n+1}$ -- {\em degeneracies},
+        \end{itemize}
+        such that
+        \begin{itemize}
+            \item $\forall_{i<j}\, d_i d_j = d_{j-1} d_i$,
+            \item $\forall_{i>j}\, s_i s_j = s_j s_{i-1}$,
+            \item $d_i s_j =
+            \begin{cases}
+                s_{j-1} d_i & \forall_{i<j} \\
+                \id & \forall_{i=j \vee i=j+1} \\
+                s_i d_{i-1} & \forall_{i>j+1}
+            \end{cases}$.
+        \end{itemize}
+    \end{definition}
+    
+    \begin{definition}[simplicial map]
+        A~{\em simplicial map} between simplicial objects
+        $X \to Y$ consists of the sequence of $f_n:X_n \to Y_n$
+        which commute with boundaries and degeneracies.
+    \end{definition}
+    
+    \begin{definition}[simplicial category]
+        Denote by $s\C$ the category of simplicial objects in $\C$.
+    \end{definition}
+    
+    \begin{remark}
+        Any functor $F:\C \to \C'$ extends to $F:s\C \to s\C'$
+    \end{remark}
+    
+    \begin{definition}
+        Let $\Delta$ denote the subcategory of sets
+        $\Ob(\Delta) = \{ [n]\} = \{ \{0,1,\ldots, n\} : n \geq 0 \}$,
+        $\Mor_\Delta([n],[m]) = $ nondecreasing maps $[n] \to [m]$.
+    \end{definition}
+    
+    \begin{definition}[simplicial object again]
+        Any functor $X:\Delta^{op} \to \C$ is called
+        a~{\em simplicial object} in $\C$.
+    \end{definition}
+    
+    \begin{definition}[simplicial maps]
+        For $X, Y$ simplicial objects,
+        $\Mor_{s\C}(X,Y) = \Mor_{F(\Delta^{op},\C)}(X,Y)$.
+    \end{definition}
+    
+    \begin{definition}
+        Let $\varepsilon^i:[n-1]\to[n]$
+        be defined as
+        $\varepsilon^i(j) = 
+        \begin{cases}
+            j & \forall_{j<i} \\
+            j+1 & \forall_{j \geq i}
+        \end{cases}$
+        and $\eta^i:[n+1] \to [n]$
+        be defined as
+        $\eta^i(j) =
+        \begin{cases}
+            j & \forall_{j \leq i} \\
+            j-1 & \forall_{j>i}
+        \end{cases}$.
+    \end{definition}
+    
+    \begin{remark}
+        These correspond to $d_i, s_i$ respectively.
+    \end{remark}
+    
+    \begin{proposition}
+        Any morphism $\alpha \in \Delta$
+        can be uniquely expressed as $\varepsilon \circ \eta$,
+        where $\varepsilon$ is a~composition of
+        $\varepsilon^i$'s, and $\eta$
+        is a~composition of $\eta^i$'s.
+    \end{proposition}
+    \pagebreak
+    \begin{remark}
+        A~bunch of examples appear:
+        \begin{itemize}
+            \item $\tilde{K}$ -- simplicial set 
+            of a~geometric simplicial complex $K$,
+            \item $\Delta_n$ -- topological simplices,
+            and $S:\Top \to s\Set$ singular simplicial set
+            functor,
+            \item $\Delta[n] = \Hom_\Delta(\cdot, [n])$,
+            \item nerve of a~small category $N(\C)$,
+            \item functor $s\Set \to s\Rmod$
+            induced by a~functor $\Set \to \Rmod$
+            mapping $X \mapsto R[X]$.
+        \end{itemize}
+    \end{remark}
+    
+    \begin{remark}
+        If $X, Y \in s\Set$, then there is a~simplicial product
+        $(X \times Y)_n = X_n \times Y_n$,
+        $d_i = d_i^X \times d_i^Y$
+        and $s_i = s_i^X \times s_i^Y$.
+    \end{remark}
+    
+    \begin{definition}[geometric realization]
+        Define $\sigma_i:\Delta_n \to \Delta_{n-1}$,
+        $\sigma_i(t_0,\ldots, t_n) = (t_0,\ldots,t_i+t_{i+1},\ldots, t_n)$
+        and $\delta_i:\Delta_n \to \Delta_{n+1}$,
+        $\delta_i(t_0, \ldots, t_n) = (t_0, \ldots, t_{i-1},0,t_i,\ldots,t_n)$.
+        
+        Assume $X \in s\Set$. We can define a~geometric realization of $X$
+        $$|X_\bullet| = \bigslant{\bigsqcup X_n \times \Delta_n}{\sim},$$
+        where $(d_i(x),s) \sim (x,\delta_i(s))$ 
+        for $(x,s) \in X_n \times \Delta_{n-1}$
+        and $(s_i(x),s) \sim (x,\sigma_i(s))$
+        for $(x,s) \in X_n \times \Delta_{n+1}$.
+    \end{definition}
+    
+    \begin{remark}
+        If a~category $\C$ has a~faithful functor to $\Set$,
+        then for $X_\bullet \in s\C$ we define its $|X_\bullet|$.
+    \end{remark}
+    
+    \begin{theorem}[properties of $|\bullet|:s\Set \to \Top$]
+        \begin{enumerate}
+            \item $|X \times Y| \simeq |X|\times|Y|$ homeomorphism
+            (in CW topology),
+            \item $K$ -- geometric simplicial complex, then 
+            $|\tilde{K}_\bullet| \simeq K$ homeomorphic,
+            \item $\C$ is group $G$, 
+            i.e. $\Ob(\C) = \ast, \Mor_\C(\ast,\ast) = G$,
+            then $|N(\C)| = K(G,1)$,
+            \item Functors $S:\Top\to s\Set$ 
+            and $|\bullet|:s\Set \to\Top$ are adjoint.
+        \end{enumerate}
+    \end{theorem}
+
+\end{document}
+ 
+ 

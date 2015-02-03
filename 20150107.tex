@@ -1,0 +1,74 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: January 7, 2014\hfill}
+
+\begin{document}
+    \begin{remark}
+        $C_\ast(\C)$ does not have enough projective objects.
+    \end{remark}
+    
+    \begin{theorem}
+        The sequence of functors $\{ H_i\}_{i=0}^\infty$
+        gives us a~{\em universal $\delta$-functor}
+        (takes short exact sequences to long exact sequences),
+        i.e. if we have another sequence $T_i$ such that
+        $T_0 = H_0$, then $\forall_i H_i^\ast= T_i^\ast$.
+    \end{theorem}
+    
+    \begin{lemma}
+        For a~given $C_\ast \in C_\ast(\C)$ there exists 
+        $P_\ast \twoheadrightarrow C_\ast$
+        such that $H_i(P_\ast) = 0$ for $i>0$.
+    \end{lemma}
+    
+    \begin{remark}
+        If $p+q=n$,
+        let $f_{pq}:X_{nn}\to X_{pq}$ be
+        defined as $d_{p+1}^h \circ \ldots \circ d_n^h
+        \circ d_0^v \circ \ldots \circ d_0^v$,
+        and then the Alexander-Whitney map
+        $\sum_{p+q = n}f_{pq}:X_{nn} \to \bigoplus_{p+q=n}X_{pq}$
+        gives a~chain homotopy equivalence 
+        of $k(X_{pp})$ and $\mr{tot}(kX_{pq})$.
+    \end{remark}
+    
+    \begin{remark}
+        We may take a~projective simplicial resolution $P_\ast$ of $A$
+        of degree $n>i$,
+        then $L_i^s T(A) = H_{n+i}(T(P_\ast))$.
+    \end{remark}
+    
+    \begin{theorem}
+        $\deg L_i T(\bullet, n) \leq \lfloor \frac i n \rfloor$.
+    \end{theorem}
+    
+    \begin{remark}
+        Or theorem? Or proof?
+        It is written that $T((A,n)\oplus(B,n)) = T(A,n) \oplus T(B,n) \oplus V$
+        where $V$ is trivial below $2n$.
+    \end{remark}
+    
+    \begin{proposition}
+        $\forall_i \, L_i^sT$ is an additive functor.
+    \end{proposition}
+    
+    \begin{proposition}
+        Let $0 \to A \to B \to C \to 0$ be exact in $\C$.
+        Then we have a~long exact sequence
+        $\ldots \to L_{q+1}^s T(C) \to L_q^sT(A) \to L_q^sT(B) \to L_q^sT(C) \to \ldots$.
+    \end{proposition}
+    
+    \begin{proposition}
+        If $0 \to T' \to T \to T'' \to 0$ is an exact sequence of functors,
+        then we have a~long exact sequence of functors
+        $\ldots \to L_{i+1}^s T'' \to L_i^s T' \to L_i^s T \to L_i^s T'' \to \ldots$.
+    \end{proposition}
+    
+    \begin{proposition}
+        Let $U$ be an additive functor, then for any functor $T$ we have
+        $\Hom_{sth}(T,U) \simeq \Hom_{sth2}(L^s_0 T,U)$.
+    \end{proposition}
+
+\end{document}
+ 
+ 

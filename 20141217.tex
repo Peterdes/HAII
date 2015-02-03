@@ -1,0 +1,205 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Homological algebra II: December 17, 2014\hfill}
+
+\begin{document}
+    \begin{theorem}
+        Assume $T$ is of degree $\leq k$, 
+        $A \in \Ob(\C)$ is of projective dimension $\leq n$,
+        then $L_qT(A,n) = 0$ for $q > k(r+n)$.
+    \end{theorem}
+    
+    \begin{lemma}
+        Let $T$ be as above and $X \in s\C$ such that
+        $(NX)_i = 0$ for $i>m$.
+        Then $N(TX)_i = 0$ for $i>km$.
+    \end{lemma}
+    
+    \begin{definition}[suspension]
+        $SA = \coker(A \to CA)$,
+        or $(SA)_q = A_{q-1}$ and $d^{SA} = - d^A$.
+    \end{definition}
+    
+    \begin{corollary}
+        We have an exact sequence
+        $0 \to A \xrightarrow \kappa CA \xrightarrow \pi SA \to 0$.
+    \end{corollary}
+    
+    \begin{definition}
+        Let $X \in s\C$. Define {\em cone and suspension} of $X$ by the formulas
+        $CX = KCNX, SX = KSNX$.
+    \end{definition}
+    
+    \begin{remark}
+        We have an exact sequence (exact on each level)
+        $0 \to X \xrightarrow \kappa CX \xrightarrow \pi SX \to 0$.
+        
+        Applying $T$ we get (not necessarily exact)
+        $0 \to TX \xrightarrow{T(\kappa)} T(CX) \xrightarrow{T(\pi)}T(SX) \to 0$.
+    \end{remark}
+    
+    \begin{remark}
+        Let $A \xrightarrow f B \xrightarrow g C$ be a~sequence in $C_\ast(\C)$
+        such that $g \circ f = 0$ and $B$ is contractible,
+        i.e. we have $s_q:B_q \to B_{q+1}$ such that $d^B s + sd^B = \id$.
+        Then $gsf:A \to C$ gives a~chain map $SA \to C$
+        and hence a~map $H_q(A) \to H_{q+1}(C)$.
+    \end{remark}
+    
+    \begin{theorem}
+        $H(gsf)$ does not depend on the choice of $s$.
+    \end{theorem}
+    
+    \begin{definition}[suspension homomorphism]
+        The map $\sigma:H_q(TX) \to H_{q+1}(TSX)$ induced by $\kappa$
+        and $\pi$ is called a~{\em suspension homomorphism}.
+    \end{definition}
+    
+    \begin{proposition}
+        $\sigma$ defines a~natural transformation of functors.
+    \end{proposition}
+    
+    \begin{proposition}
+        Assume $T$ additive, then $0 \to T(X) \to T(CX) \to T(SX) \to 0$ exact
+        and we have a~long exact sequence of homology groups:
+        $\ldots \to 0 \to H_{q+1}(TSX) \to H_q(TX) \to 0 \to \ldots$,
+        and $\sigma$ is the inverse of the map in the middle.
+    \end{proposition}
+    
+    \begin{definition}
+        Let $T_p^d(A) = T_p(A,\ldots,A)$ ($d$ means diagonal).
+    \end{definition}
+    
+    \begin{definition}
+        Define $d_i = \rho \circ T(\alpha_i') \circ \lambda:
+        T_p^d(A) \to T_{p-1}^d(A),$ \\
+        where $\lambda$ monomorphism $T_p^d(A) \to T(A \oplus \ldots \oplus A)$,
+        $\rho$ epimorphism $T(A\oplus \ldots \oplus A) \to T_{p-1}^d(A)$,
+        and $d_j':\bigoplus_{i=1}^p A \to \bigoplus_{i=1}^{p-1} A$,
+        equal to $(\id, \ldots, \id, (\id + \id)_j, \id,\ldots, \id)$.
+    \end{definition}
+    
+    \begin{definition}
+        Let $X \in s\C$. Define a~sequence of simplicial objects in $\C'$:
+        $$\mc T  X = (T_1^d(X) \xleftarrow{\partial'} T_2^d(X) 
+        \xleftarrow{} T_3^d(X) \xleftarrow{} \ldots,
+        \qquad \partial' = \sum_{i=1}^{p-1} (-1)^i d_i.$$
+    \end{definition}
+    
+    \begin{remark}
+        $\partial' \circ \partial' = 0.$
+    \end{remark}
+    
+    \begin{corollary}
+        Therefore $\mc T  X$ gives a~bicomplex $$(\mc T  X)_{p,q} = T_p^d(X_q)$$
+        with horizontal differentials $\partial'$ and vertical differentials 
+        from $kX$.
+    \end{corollary}
+    
+    \begin{proposition}
+        We have an embedding $i:kTX = (\mc T  X)_{1,\ast} 
+            \hookrightarrow \mr{Tot}(\mc T  X)$
+        and it is a~chain map of degree $1$.
+    \end{proposition}
+    
+    \begin{theorem}
+        There is a~natural isomorphism 
+        $\omega: H tot(\mc T  S X) \simeq H(TSX)$
+        such that for any $q$ the diagram commutes:
+        \begin{tikzpicture}
+            \matrix(m)[matrix of math nodes, row sep=1em]
+            { & & H_{q+1}(TSX) \\
+            H_q TX & &  \\
+                & & H_q(\mc T X) \\ };
+            \path[->,font=\scriptsize]
+            (m-2-1) edge node[auto] {$\sigma$} (m-1-3)
+            (m-2-1) edge node[auto] {$i$} (m-3-3)
+            (m-3-3) edge node[auto] {$\omega$} (m-1-3);
+        \end{tikzpicture}
+    \end{theorem}
+    
+    \begin{definition}[bar construction]
+        $\mc T X$ is called the {\em bar construction} for $T$.
+    \end{definition}
+    
+    \begin{corollary}
+        If $T$ is additive, then $\sigma$ is an isomorphism.
+    \end{corollary}
+    
+    \begin{corollary}
+        If $T$ is of degree $2$, then there exists a~morphism $\beta$
+        such that the sequence is exact:
+        $\ldots \to H_q T_2(X,X) \xrightarrow \alpha H_q(TX)
+        \xrightarrow \sigma H_{q+1}(TSX)
+        \to H_{q+1} T_2(X,X) \to H_{q+1}(TX) \to \ldots$.
+    \end{corollary}
+    
+    \begin{corollary}
+        There exists a~spectral sequence wchich converges to $H_\ast TSX$ 
+        and which satisfies
+        \begin{itemize}
+            \item $E_{pq}'$ is equal to the complex
+            $H_q TX \xleftarrow{H_q(\partial')} H_q T_2(X,X)
+            \xleftarrow{H_q(\partial')} H_q T_3(X,X,X) \xleftarrow{} \ldots$,
+            \item the homomorphism
+            $H_qTX = E_{pq}' \to H_{q+1}TSX$ is the same as $\sigma$.
+        \end{itemize}
+    \end{corollary}
+    
+    \begin{definition}
+        We say that $X \in s\C$ is {\em trivial below $n$}
+        if there exists $X' \in s\C$ which is homotopy equivalent to $X$
+        and satisfies $X_i' = 0$ for $i<n$.
+    \end{definition}
+    
+    \begin{lemma}
+        If $X$ is projective and $H_q(X) = 0$
+        for $q<n$, then $X$ is trivial below $n$.
+    \end{lemma}
+    
+    \begin{remark}[digression]
+        A~{\em bisimplicial object}
+        is $X_{p,q}$ with $X_{p,q} \to X_{r,s}$
+        for any $\alpha:[r]\to [p], \beta:[s]\to [q]$,
+        which satisft simplicial identities in both directions.
+        
+        Every bisimplicial object gives us a~bicomplex $kX$.
+        
+        If $X$ is bisimplicial, then it comes with a~diagonal
+        simplicial object $X_{k,k} \xrightarrow{(\alpha,\alpha)} X_{l,l}$
+        (where $\alpha:[l]\to[k]$).
+    \end{remark}
+    
+    \begin{theorem}[Eilenberg-Zilber(-Cantier)]
+        There is a~chain homotopy equivalence 
+        $k(X_{p,p}) = \mr{tot}(k X_{p,q})$.
+    \end{theorem}
+    
+    \begin{remark}
+        Observe that $X_{p,p}$ is in degree $p$
+        to the left and $p+p$ to the right.
+    \end{remark}
+    
+    \begin{proposition}
+        Let $T:\C^l \to \C'$
+        be such that $T(\ldots, 0_j, \ldots) = 0$.
+        Let, for $j=1, \ldots, l$, $X^j \in s\C$ be trivial below $n_j$.
+        Then $T(X^1, \ldots, X^l)$ is trivial below $n_1 + \ldots + n_l = n$
+        (therefore $H_q T(X^1, \ldots, X^l) = 0$ for $q < n$).
+    \end{proposition}
+    
+    \begin{corollary}
+        If $X$ is trivial below $n$, then the suspension homomorphism
+        $\sigma:H_q(TX) \to H_{q+1}(TSX)$ is an isomorphism
+        for $q<2n$ and epimorphism for $q = 2n$.
+    \end{corollary}
+    
+    \begin{definition}[stable derived functors]
+        $L_{q+n}(T \bullet, n)$ for $n>q$ is called
+        the $q$-th stable derived functor of $T$,
+        denoted $L_q^s T(\bullet)$.
+    \end{definition}
+
+\end{document}
+ 
+ 
